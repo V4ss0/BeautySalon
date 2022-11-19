@@ -1,0 +1,502 @@
+$white: #FFF;
+$light-gray: #F9F9F9;
+$dark-gray: #E4E4E4;
+$gray: #767676;
+$black: #0F241D;
+$green: #69B99D;
+$light-green: #CCF4E6;
+
+*{
+  margin: 0;
+}
+
+html{
+  background-color: $light-gray;
+}
+
+//Texto
+h1, h2{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  color: $black;
+  
+  font-size: 36px;
+  line-height: 54px;
+
+  margin-bottom: 12px;
+}
+h3, p, a{
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  color: $gray;
+  
+  font-size: 16px;
+  line-height: 26px;
+  text-decoration: none;
+}
+
+h2{
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  line-height: 28px;
+  color: $gray;
+}
+strong{
+  color: $green;
+}
+
+//Botão
+button{
+  padding: 13px 28px;
+  border: 2px solid $green;
+  border-radius: 5px;
+
+  background-color: $green;
+  outline-style: none;
+  align-items: center;
+  margin-top: 25px;
+
+  transition: background-color 0.2s;
+
+  h3{
+    margin: 0;
+    color: $white;
+
+    transition: color 0.2s;
+  }
+  &:hover{
+    background-color: $white;
+
+    svg path{
+      stroke: $green;
+      // fill: $green;
+    } 
+    h3{
+      color: $black;
+
+      transition: color 0.2s;
+    }
+
+    transition: background-color 0.2s;
+  }
+}
+
+//Imagem
+svg path{
+  stroke: $light-gray;
+}
+.icon{
+  margin: auto 10px auto 0;
+}
+
+//Elemento de blocos
+.left-div, .right-div{
+  flex: 1;
+}
+.image-block{
+  width: 580px;
+  aspect-ratio: 3/2;
+
+  background-color: $light-green;
+}
+.flex-box-div{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  margin-top: 60px;
+}
+.flex-box{
+  padding: 60px 40px;
+  border-radius: 5px;
+  border-bottom: 3px solid $green;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+}
+
+nav, nav .right-div{
+  display: flex;
+  flex-direction: row;
+}
+nav{
+  padding: 0 10vw;
+  margin: 20px auto;
+  margin: auto;
+  border-bottom: 2px solid $dark-gray;
+
+  .left-div img{
+    margin: 25px 0;
+  }
+  .right-div{
+    margin-left: auto;
+
+    #menu a{
+      padding: 25px;
+      background-color: $light-gray;
+      color: $black;
+
+      transition-property: background-color, color;
+      transition-delay: 0.2s;
+
+      &:hover{
+        background-color: $green;
+        color: $white;
+
+        transition-property: background-color, color;
+        transition-delay: 0.2s;
+      }
+    }
+    .button-active{
+      border-bottom: 2px solid $green;
+      color: $green;
+    }
+  }
+} 
+
+section{
+  position: relative;
+  padding: 160px 10vw;
+}
+section:nth-child(2n){
+  background-color: $white;
+}
+#inicio,
+#sobre,
+#contato,
+footer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+#servicos,
+#depoimentos{
+  text-align: center;
+}
+
+footer{
+  padding: 40px 10vw;
+  background-color: $green;
+
+  p{
+    color: $white;
+  }
+  .left-div{
+    flex: none;
+    margin-right: auto;
+  }
+  .right-div{
+    flex: none;
+    display: flex;
+  }
+}
+
+#inicio .left-div{
+  flex: 1;
+}
+#inicio .right-div{
+  flex: 2;
+}
+#inicio,
+#sobre{
+  padding: 160px 5vw;
+} 
+#inicio .left-div,
+#sobre .right-div{
+  padding: 5vw;
+}
+#inicio{
+  flex-flow: wrap-reverse;
+
+  .left-div{
+    margin-bottom: 50px;
+  }  
+  .right-div{
+    position: relative;
+    // text-align: center;
+    // margin-left: 100px;
+    .image-div{
+      margin: 0 auto;
+      width: fit-content;
+      
+      .image-block{
+        margin-left: auto;
+        margin-bottom: 60px;
+        // margin-top: -70px;
+        // right: 9vw;
+      }
+      img{
+        position: absolute;
+        top: 60px;
+        left: 0px;
+      }
+    }
+  }
+} 
+#sobre{
+  position: relative;
+  
+  .left-div{
+    flex: none;
+    width: 500px;
+    height: 450px;
+
+    .image-div{
+      position: absolute;
+      left: -200px;
+      margin: 0 auto;
+      width: fit-content;
+      
+      .image-block{
+        // margin-left: auto;
+        margin-bottom: 60px;
+      }
+      img{
+        position: absolute;
+        top: 30px;
+        left: 200px;
+      }
+    }
+  } 
+}
+#sobre p{
+  margin-bottom: 20px;
+}
+#depoimentos .bottom-div p,
+#servicos {
+  .top-div p{
+    color: $black;
+  }
+  .bottom-div img{
+    margin-bottom: 25px;
+  }
+}
+#depoimentos{
+  .flex-box-div{
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  
+    .flex-box{
+      text-align: left;
+      border-bottom-style: none;
+      
+      .bottom-div{
+        display: flex;
+        flex-direction: row;
+        margin-top: 25px;
+      }
+    } 
+  }
+  .pager{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    margin: 30px auto;
+
+    .pager-icon{
+      width: 15px;
+      height: 15px;
+      border-radius: 100%;
+      margin: 0 5px;
+
+      background-color: $dark-gray;
+
+      &:first-child{
+        background-color: $green;
+      }
+    }
+  }
+} 
+#contato button, 
+#contato .flex-box-div{
+  display: flex;
+  flex-direction: row;
+}
+#contato{
+  .left-div{
+    padding: 0 30% 0 0;
+  }
+  .right-div{
+    // padding: 0 0 0 180px;
+    
+    .box-div{
+      width: fit-content;
+      // margin: 0 auto;
+  
+      .flex-box-div{
+        width: fit-content;
+        margin-top: 30px;
+        
+        &:first-child{
+          margin-top: 80px;
+        }  
+      }
+    }
+  }
+} 
+
+@media (max-width: 700px){
+  section{
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  nav button{
+    display: none;
+  }
+  
+  .image-block{
+    width: 100%;
+  }
+  .flex-box-div{
+    grid-template-columns: 1fr;
+  }
+  .flex-box{
+    margin-bottom: 30px;
+  }
+  
+  #inicio{
+    flex-direction: column-reverse;
+
+    .right-div .image-div img,
+    .right-div .image-div .image-block{
+      width: 80vw;
+    }
+    .left-div{
+      text-align: center;
+      min-width: none;
+    }
+  }
+  #sobre{
+    .left-div{
+      width: 100%;
+      height: 80vw;
+      .image-div img,
+      .image-div .image-block{
+        width: 100vw;
+      }
+    }
+    .right-div{
+      min-width: none;
+    }
+  }
+  #servicos{
+    .top-div{
+      text-align: left;
+    }
+    p{
+      margin: 0;
+    }
+  }
+  #depoimentos{
+    .top-div{
+      text-align: left;
+    }
+    .flex-box-div{
+      grid-template-columns: 1fr;
+    }
+  } 
+}
+@media (min-width: 700px){
+  .flex-box{
+    margin: 0 30px 30px 30px;
+  }
+
+  #inicio .left-div,
+  #sobre .right-div{
+    min-width: 300px;
+  }
+  #servicos .top-div p{
+    margin: auto;
+    width: 50%;
+  }
+}
+@media (max-width: 1000px){
+  nav{
+    button{
+      display: block;
+      background-color: $light-gray;
+      border-color: $light-gray;
+      margin: 0 0 0 auto;
+    }
+    .deactive{
+      display: none;
+    }
+    .active{
+      display: flex;
+      flex-direction: row;
+    }
+
+    .right-div[class="right-div active"]{
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+
+      background-color: $white;
+      display: block;
+      text-align: center;
+
+      button,
+      #menu a{
+        display: block;
+        background-color: $white;
+        border-style: none;
+        
+        transition-property: background-color, color;
+        transition-delay: 0.2s;
+        
+        svg path{
+          stroke: $green;
+          transition: stroke 0.2s;
+        }
+        
+        &:hover{
+          background-color: $green;
+          color: $white;
+
+          svg path{
+            stroke: $white;
+            transition: stroke 0.2s;
+          }
+          transition-property: background-color, color;
+          transition-delay: 0.2s;
+        }
+      }
+
+      #menu{
+        width: 100%;
+        height: 100%;
+  
+        display: block;
+        
+        a{
+          font-family: 'Poppins';
+          font-style: normal;
+          font-weight: 700;
+          color: $black;
+          
+          font-size: 36px;
+          line-height: 54px;
+
+          margin-bottom: 12px;
+          
+          // &:first-child{
+          //   border-bottom-style: none;
+          // }
+        }
+      }
+    }
+  } 
+}
+@media (min-width: 1000px){
+  nav{
+    .right-div #menu{
+      display: flex;
+      flex-direction: row;
+    }
+    button{
+      display: none;
+    }
+  } 
+}
